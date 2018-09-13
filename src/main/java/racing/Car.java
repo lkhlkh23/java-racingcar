@@ -2,6 +2,7 @@ package racing;
 
 public class Car implements Comparable<Car>{
     static final char POSITION_IMAGE = '-';
+    static final int STOP_STANDARD = 4;
     private String name;
     private int carPosition = 0;
 
@@ -9,12 +10,8 @@ public class Car implements Comparable<Car>{
         this.name = name;
     }
 
-    public int getCarPosition() {
-        return carPosition;
-    }
-
-    public void move(int distance) {
-        carPosition += distance;
+    public void move(int randNum) {
+        carPosition = randNum > STOP_STANDARD ? carPosition + 1 : carPosition;
     }
 
     public String getCarDistance() {
@@ -27,13 +24,13 @@ public class Car implements Comparable<Car>{
     }
 
     public String getWinner(Car c) {
-        return c.getCarPosition() == carPosition ? name + "," : "";
+        return c.carPosition == this.carPosition ? name + "," : "";
     }
 
     @Override
     public int compareTo(Car c) {
-        if(carPosition > c.getCarPosition()) return -1;
-        else if (carPosition < c.getCarPosition()) return 1;
+        if(this.carPosition > c.carPosition) return -1;
+        else if (this.carPosition < c.carPosition) return 1;
         else return 0;
     }
 }

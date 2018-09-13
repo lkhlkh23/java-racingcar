@@ -2,8 +2,6 @@ package racing;
 import java.util.*;
 
 public class Racing {
-    static final int STOP_STANDARD = 0;
-    static final int START_STANDARD = 4;
     static final int RANDOM_STANDARD = 10;
     /* 변수명에는 타입을 넣지 말기 ex) RESULT_STRING */
     private int time;
@@ -28,14 +26,12 @@ public class Racing {
 
     public void moveCar(Car car, int time) {
         for (int i = 0; i < time; i++)
-            car.move(getNum());
-
+            car.move(getRandNum());
     }
 
-    public int getNum() {
+    public int getRandNum() {
         /* 전진(4 이상) 또는 정지(4 미만) */
-        int num = random.nextInt(RANDOM_STANDARD);
-        return num >= START_STANDARD ? num : STOP_STANDARD;
+        return random.nextInt(RANDOM_STANDARD);
     }
 
     public void printRacingResult() {
