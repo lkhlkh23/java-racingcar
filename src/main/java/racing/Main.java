@@ -9,4 +9,8 @@ public class Main {
         racing.printRacingResult();
         racing.printWinners();
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> lkhlkh23
 }

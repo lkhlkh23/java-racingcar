@@ -32,6 +32,7 @@ public class Racing {
     public int getRandNum() {
         /* 전진(4 이상) 또는 정지(4 미만) */
         return random.nextInt(RANDOM_STANDARD);
+
     }
 
     public void printRacingResult() {
